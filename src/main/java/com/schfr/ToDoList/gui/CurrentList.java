@@ -1,5 +1,7 @@
 package com.schfr.ToDoList.gui;
 
+import com.schfr.ToDoList.model.HandleDataBase;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
@@ -14,6 +16,7 @@ public class CurrentList extends JFrame
     private JTextField userInput;
     private JTable toDoTable;
     private int rowCounter;
+    private HandleDataBase handleDataBase = HandleDataBase.getInstance();
 
     // ToDo Create a CloumnTable (or similar) where the text will be centered for the table
 
@@ -58,6 +61,8 @@ public class CurrentList extends JFrame
             {
                 if (!Objects.equals(userInput.getText(), "") && rowCounter < toDoTable.getRowCount())
                 {
+                    handleDataBase.setTaskInput(userInput.getText());
+                    handleDataBase.safeTasks();
                     toDoTable.setValueAt(userInput.getText(), rowCounter, 0);
                     rowCounter += 1;
                 }
