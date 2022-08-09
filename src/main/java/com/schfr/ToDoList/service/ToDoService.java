@@ -15,7 +15,7 @@ public class ToDoService
         HandleDataBase handleDataBase = HandleDataBase.getInstance();
         ArrayList<ToDo> dailyTasks = new ArrayList<>();
 
-        dailyTasks.add(new ToDo(handleDataBase.getTaskInput()));
+        dailyTasks.add(new ToDo(handleDataBase.getTaskInput(), handleDataBase.getDateInput()));
 
 
         return dailyTasks;

@@ -4,6 +4,7 @@ import com.schfr.ToDoList.model.HandleDataBase;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -28,22 +29,35 @@ public class CurrentList extends JFrame
 
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        contentPane.setBackground(Color.getHSBColor(26.2f, 0.24f, 0.92f));
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
         userInput = new JTextField();
-        userInput.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        userInput.setBounds(20, 44, 220, 22);
+        userInput.setFont(new Font("Consolas", Font.PLAIN, 14));
+        userInput.setBounds(20, 44, 220, 30);
         contentPane.add(userInput);
 
         JLabel titel = new JLabel("New ToDo-Task: ");
-        titel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        titel.setFont(new Font("Consolas", Font.PLAIN, 15));
         titel.setBounds(20, 15, 154, 14);
         contentPane.add(titel);
 
+        JLabel currentDate = new JLabel(handleDataBase.getDateInput(), SwingConstants.CENTER);
+        currentDate.setFont(new Font("Consolas", Font.PLAIN, 20));
+        currentDate.setBounds(400, 15, 120, 30);
+        currentDate.setBorder(BorderFactory.createLineBorder(Color.BLACK, 3));
+        contentPane.add(currentDate);
+
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        centerRenderer.setVerticalAlignment(JLabel.CENTER);
+
         toDoTable = new JTable(new DefaultTableModel(5, 2));
         toDoTable.setAutoResizeMode(4);
-        toDoTable.setBounds(120,150,360,370);;
+        toDoTable.setFont(new Font("Consolas", Font.PLAIN, 20));
+        toDoTable.setDefaultRenderer(Object.class, centerRenderer);
+        toDoTable.setBounds(120,150,360,370);
         toDoTable.setRowHeight(toDoTable.getBounds().height/5);
         contentPane.add(toDoTable);
 
@@ -62,6 +76,7 @@ public class CurrentList extends JFrame
                 if (!Objects.equals(userInput.getText(), "") && rowCounter < toDoTable.getRowCount())
                 {
                     handleDataBase.setTaskInput(userInput.getText());
+                    handleDataBase.setDateInput(handleDataBase.getDateInput());
                     handleDataBase.safeTasks();
                     toDoTable.setValueAt(userInput.getText(), rowCounter, 0);
                     rowCounter += 1;

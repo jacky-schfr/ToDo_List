@@ -12,6 +12,8 @@ public class ToDo
 
     private String task;
 
+    private String date;
+
     public ToDo()
     {
     }
@@ -19,6 +21,12 @@ public class ToDo
     public ToDo(String task)
     {
         this.task = task;
+    }
+
+    public ToDo(String task, String date)
+    {
+        this.task = task;
+        this.date = date;
     }
 
     public Long getId()
@@ -39,5 +47,15 @@ public class ToDo
     public void setTask(String task)
     {
         this.task = task;
+    }
+
+    public String getDate()
+    {
+        return date;
+    }
+
+    public void setDate(String date)
+    {
+        this.date = date;
     }
 }
