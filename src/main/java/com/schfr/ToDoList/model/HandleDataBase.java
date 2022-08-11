@@ -4,9 +4,6 @@ import com.schfr.ToDoList.repository.ToDoRepository;
 import com.schfr.ToDoList.service.ToDoService;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class HandleDataBase
 {
     private static HandleDataBase handleDataBase = new HandleDataBase();
