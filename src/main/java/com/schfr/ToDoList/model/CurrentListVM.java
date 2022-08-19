@@ -1,15 +1,14 @@
 package com.schfr.ToDoList.model;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 
-public class CurrentListViewModel
+public class CurrentListVM
 {
-    private static CurrentListViewModel cLVM = new CurrentListViewModel();
+    private static CurrentListVM cLVM = new CurrentListVM();
     private JPanel container;
     private JTextField userInput;
     private JTable toDoTable;
@@ -89,10 +88,9 @@ public class CurrentListViewModel
         btAdd.setBounds(100, 82, 89, 25);
         btAdd.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
 
-
     }
 
-    public static CurrentListViewModel getInstance()
+    public static CurrentListVM getInstance()
     {
         cLVM.createUI();
         return cLVM;

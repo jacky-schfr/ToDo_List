@@ -1,7 +1,8 @@
 package com.schfr.ToDoList.gui;
 
-import com.schfr.ToDoList.model.CurrentListViewModel;
+import com.schfr.ToDoList.model.CurrentListVM;
 import com.schfr.ToDoList.model.HandleDataBase;
+import com.schfr.ToDoList.model.SwitchButton;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,8 +13,9 @@ import java.util.Objects;
 public class CurrentList extends JPanel
 {
     private int rowCounter;
-    private CurrentListViewModel cLVM = CurrentListViewModel.getInstance();
+    private CurrentListVM cLVM = CurrentListVM.getInstance();
     private HandleDataBase handleDataBase = HandleDataBase.getInstance();
+    private SwitchButton switchButton = new SwitchButton("past");
 
     public CurrentList()
     {
@@ -21,6 +23,7 @@ public class CurrentList extends JPanel
         setBorder(new EmptyBorder(5, 5, 5, 5));
         setBackground(Color.getHSBColor(26.2f, 0.24f, 0.92f));
         setLayout(null);
+
         // Action to add user input to ToDoList by clicking on the ADD button or pressing enter.
         Action action = new AbstractAction()
         {
@@ -49,6 +52,7 @@ public class CurrentList extends JPanel
         add(cLVM.getContainer());
         add(cLVM.getTitel());
         add(cLVM.getCurrentDate());
+        add(switchButton);
 
         cLVM.getBtAdd().addActionListener(action);
         cLVM.getUserInput().addActionListener(action);

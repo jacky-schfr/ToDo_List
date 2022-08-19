@@ -19,7 +19,7 @@ public class MainFrame extends JFrame
         setLocationByPlatform(true);
 
         navController.setJFrame(this);
-        navController.navigateTo();
+        navController.navigateTo("current");
 
         setVisible(true);
     }
