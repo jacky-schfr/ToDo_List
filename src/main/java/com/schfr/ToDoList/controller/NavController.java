@@ -1,8 +1,8 @@
 package com.schfr.ToDoList.controller;
 
-import com.schfr.ToDoList.gui.CurrentList;
-import com.schfr.ToDoList.gui.OldLists;
-import com.schfr.ToDoList.model.SwitchButton;
+import com.schfr.ToDoList.model.CurrentList.CurrentList;
+import com.schfr.ToDoList.model.OldLists.OldLists;
+import com.schfr.ToDoList.model.Welcome.Welcome;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +17,7 @@ public class NavController
     private JPanel mainPanel;
     private CurrentList cL;
     private OldLists oL;
+    private Welcome wel;
 
     public NavController()
     {
@@ -24,9 +25,11 @@ public class NavController
         mainPanel = new JPanel(cardLayout);
         cL = new CurrentList();
         oL = new OldLists();
+        wel = new Welcome();
 
         mainPanel.add(cL, "current");
         mainPanel.add(oL, "past");
+        mainPanel.add(wel, "welcome");
 
 
         mainPanel.setVisible(true);

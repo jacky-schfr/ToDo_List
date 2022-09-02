@@ -1,7 +1,4 @@
-package com.schfr.ToDoList.model;
-
-import javax.swing.*;
-import java.awt.*;
+package com.schfr.ToDoList.model.OldLists;
 
 
 public class OldListsVM

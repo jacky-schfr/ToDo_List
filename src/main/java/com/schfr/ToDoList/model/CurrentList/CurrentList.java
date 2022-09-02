@@ -1,6 +1,5 @@
-package com.schfr.ToDoList.gui;
+package com.schfr.ToDoList.model.CurrentList;
 
-import com.schfr.ToDoList.model.CurrentListVM;
 import com.schfr.ToDoList.model.HandleDataBase;
 import com.schfr.ToDoList.model.SwitchButton;
 

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
+// potential web connection for later usage
 @RestController
 @RequestMapping("/todo")
 public class ToDoController

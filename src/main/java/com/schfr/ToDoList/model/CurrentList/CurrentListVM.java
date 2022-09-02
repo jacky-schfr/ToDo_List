@@ -1,4 +1,6 @@
-package com.schfr.ToDoList.model;
+package com.schfr.ToDoList.model.CurrentList;
+
+import com.schfr.ToDoList.model.HandleDataBase;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -87,7 +89,6 @@ public class CurrentListVM
         btAdd.setFont(new Font("Consolas", Font.BOLD, 18));
         btAdd.setBounds(100, 82, 89, 25);
         btAdd.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
-
     }
 
     public static CurrentListVM getInstance()
