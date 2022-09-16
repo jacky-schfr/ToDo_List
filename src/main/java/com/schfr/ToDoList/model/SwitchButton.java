@@ -16,7 +16,7 @@ public class SwitchButton extends JButton
     {
         setText("Switch");
         setFont(new Font("Consolas", Font.BOLD, 15));
-        setBounds(500, 150, 65, 20);
+        setBounds(500, 180, 65, 20);
         setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
         setVisible(true);
 

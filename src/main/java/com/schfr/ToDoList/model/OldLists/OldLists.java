@@ -17,5 +17,7 @@ public class OldLists extends JPanel
         setBackground(Color.getHSBColor(26.2f, 0.24f, 0.92f));
         setLayout(null);
         add(switchButton);
+        add(oLVM.getContainer());
+        add(oLVM.getTitel());
     }
 }

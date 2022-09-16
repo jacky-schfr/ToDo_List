@@ -17,7 +17,6 @@ public class ToDoService
 
         dailyTasks.add(new ToDo(handleDataBase.getTaskInput(), handleDataBase.getDateInput()));
 
-
         return dailyTasks;
     }
 }

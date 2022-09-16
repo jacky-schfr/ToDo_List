@@ -22,9 +22,9 @@ public class WelcomeVM
 
                 Your can check of your tasks to mark them as done.
 
-                The minumum to maintain your streak is at least\s
+                The minimum to maintain your streak is at least\s
                 one task a day.
-                It doesn not matter how big the step is,\s
+                It does not matter how big the step is,\s
                 as long as it is in the right direction.
 
                 As just mentioned you are able to check your streak\s

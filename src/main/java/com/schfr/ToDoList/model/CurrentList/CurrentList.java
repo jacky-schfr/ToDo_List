@@ -7,6 +7,10 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 
 public class CurrentList extends JPanel
@@ -48,10 +52,30 @@ public class CurrentList extends JPanel
 
         add(cLVM.getUserInput());
         add(cLVM.getBtAdd());
+        add(cLVM.getBtTest()); // delete later on
         add(cLVM.getContainer());
         add(cLVM.getTitel());
         add(cLVM.getCurrentDate());
         add(switchButton);
+
+        if (handleDataBase.loadTasks(String.valueOf(LocalDate.now())) != null)
+        {
+            ArrayList<String> listAccess = handleDataBase.loadTasks(String.valueOf(LocalDate.now()));
+
+            for (int i = 0; i < 5; i ++)
+            {
+                cLVM.getToDoTable().setValueAt(listAccess.get(i), i, 0);
+            }
+        }
+
+        cLVM.getBtTest().addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                // TODO: Move the current list to the old ones.
+            }
+        });
 
         cLVM.getBtAdd().addActionListener(action);
         cLVM.getUserInput().addActionListener(action);

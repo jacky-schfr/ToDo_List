@@ -1,6 +1,7 @@
 package com.schfr.ToDoList.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class ToDo
@@ -12,7 +13,7 @@ public class ToDo
 
     private String task;
 
-    private String date;
+    private LocalDate date;
 
     public ToDo()
     {
@@ -23,7 +24,7 @@ public class ToDo
         this.task = task;
     }
 
-    public ToDo(String task, String date)
+    public ToDo(String task, LocalDate date)
     {
         this.task = task;
         this.date = date;
@@ -49,12 +50,12 @@ public class ToDo
         this.task = task;
     }
 
-    public String getDate()
+    public LocalDate getDate()
     {
         return date;
     }
 
-    public void setDate(String date)
+    public void setDate(LocalDate date)
     {
         this.date = date;
     }

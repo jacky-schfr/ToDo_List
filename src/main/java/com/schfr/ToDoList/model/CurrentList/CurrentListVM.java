@@ -14,7 +14,7 @@ public class CurrentListVM
     private JPanel container;
     private JTextField userInput;
     private JTable toDoTable;
-    private JButton btAdd;
+    private JButton btAdd, btTest;
     private JLabel currentDate, titel;
     private HandleDataBase handleDataBase = HandleDataBase.getInstance();
 
@@ -26,15 +26,15 @@ public class CurrentListVM
 
         userInput = new JTextField();
         userInput.setFont(new Font("Consolas", Font.PLAIN, 14));
-        userInput.setBounds(100, 44, 220, 30);
+        userInput.setBounds(100, 54, 220, 30);
 
         titel = new JLabel("New ToDo-Task: ");
         titel.setFont(new Font("Consolas", Font.PLAIN, 15));
-        titel.setBounds(100, 15, 154, 14);
+        titel.setBounds(100, 35, 154, 14);
 
-        currentDate = new JLabel(handleDataBase.getDateInput(), SwingConstants.CENTER);
+        currentDate = new JLabel(String.valueOf(handleDataBase.getDateInput()), SwingConstants.CENTER);
         currentDate.setFont(new Font("Consolas", Font.PLAIN, 24));
-        currentDate.setBounds(390, 12, 150, 30);
+        currentDate.setBounds(390, 22, 150, 30);
 
         // changing the DefaultTableModel,so it can display boolean values to check-off the tasks
         DefaultTableModel model = new DefaultTableModel(5, 2)
@@ -62,7 +62,6 @@ public class CurrentListVM
                     return true;
                 }
             }
-
         };
 
         // defining the table for the ToDoList
@@ -75,8 +74,7 @@ public class CurrentListVM
         toDoTable.setRowHeight(toDoTable.getBounds().height / 5);
         toDoTable.setRowSelectionAllowed(false);
 
-
-        //create a container for a table
+        //create a container for the table
         container = new JPanel();
         container.setLayout(new BorderLayout());
         container.add(toDoTable.getTableHeader(), BorderLayout.PAGE_START);
@@ -89,6 +87,13 @@ public class CurrentListVM
         btAdd.setFont(new Font("Consolas", Font.BOLD, 18));
         btAdd.setBounds(100, 82, 89, 25);
         btAdd.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
+
+        //TODO remove later on!
+        btTest = new JButton("TEST");
+        btAdd.setFont(new Font("Consolas", Font.BOLD, 15));
+        btAdd.setBounds(500, 150, 65, 20);
+        btAdd.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
+
     }
 
     public static CurrentListVM getInstance()
@@ -155,5 +160,15 @@ public class CurrentListVM
     public void setTitel(JLabel titel)
     {
         this.titel = titel;
+    }
+
+    public JButton getBtTest()
+    {
+        return btTest;
+    }
+
+    public void setBtTest(JButton btTest)
+    {
+        this.btTest = btTest;
     }
 }
